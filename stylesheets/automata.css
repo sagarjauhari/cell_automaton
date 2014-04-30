@@ -4,14 +4,14 @@
 
 square {
     padding: 0.5%;
-    background: #fff;
+    background: #000;
     float: left;
 }
 
 square:nth-child(3n){
-    background: #eee;
+    background: #111;
 }
 
 square:nth-child(3n-1){
-    background: #ddd;
+    background: #222;
 }

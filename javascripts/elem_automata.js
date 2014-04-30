@@ -28,16 +28,16 @@ function init_grid(num){
 }
 
 function reset_grid(num){
-  $(".grid square").css( "background", "#fff" );
-  $(".grid square:nth-child(3n)").css( "background", "#eee" );
-  $(".grid square:nth-child(3n-1)").css( "background", "#ddd" );
+  $(".grid square").css( "background", "#000" );
+  $(".grid square:nth-child(3n)").css( "background", "#111" );
+  $(".grid square:nth-child(3n-1)").css( "background", "#222" );
 }
 
 function color_grid(vals, row, width){
   for(var col = 0; col < vals.length; col++){
     var idx = width/2 - row + (row * width + col);
     if(vals[col] == 1){
-      $(".grid square:eq(" + idx + ")").css( "background", "#000" );
+      $(".grid square:eq(" + idx + ")").css( "background", "#fff" );
     }
   }
 }
