@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+        <link rel="stylesheet" href="stylesheets/automata.css">
 
-    <title>Cellular automaton by sagarjauhari</title>
-  </head>
+        <script src="javascripts/jquery-2.1.0.min.js" ></script>
+        <script src="javascripts/elem_automata.js" ></script>
+
+        <script>
+            $(function(){
+                var grid_size = 5000;
+                $( "#generate" ).click(function() {
+                    elem_cell_automata($("#rule").val());
+                });
+
+                init_grid(grid_size);
+            });
+        </script>
+
+
+        <title>Cellular automaton by sagarjauhari</title>
+    </head>
 
   <body>
 
@@ -30,6 +46,18 @@
       <section id="main_content">
         <h3>
 <a name="cellular-automaton" class="anchor" href="#cellular-automaton"><span class="octicon octicon-link"></span></a>Cellular Automaton</h3>
+          
+          
+          (See <a href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">Elementary Cellular Automaton</a>)
+
+        <p>
+            <label>Select a rule:</label>
+            <input type="text" id="rule">
+            <button id="generate">Generate</button>
+        </p>
+
+        <div class="grid"> </div>
+          
       </section>
     </div>
 
