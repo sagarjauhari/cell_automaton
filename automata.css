@@ -1,0 +1,17 @@
+.grid {
+    width: 1000px;
+}
+
+square {
+    padding: 0.5%;
+    background: #fff;
+    float: left;
+}
+
+square:nth-child(3n){
+    background: #eee;
+}
+
+square:nth-child(3n-1){
+    background: #ddd;
+}

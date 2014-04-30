@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+            Cellular Automata
+        </title>
+        <link rel="stylesheet" href="automata.css">
+
+        <script src="jquery-2.1.0.min.js" ></script>
+        <script src="elem_automata.js" ></script>
+
+        <script>
+            $(function(){
+                var grid_size = 5000;
+                $( "#generate" ).click(function() {
+                   elem_cell_automata($("#rule").val());
+                });
+                
+                init_grid(grid_size);
+            });
+        </script>
+    </head>
+    <body>
+        <h1> Elementary Cellular Automata </h1>
+        (See <a href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">Elementary Cellular Automaton</a>)
+
+        <p>
+            <label for="spinner">Select a rule:</label>
+            <input type="text" id="rule">
+            <button id="generate">Generate</button>
+        </p>
+
+        <pre id="container"></pre>
+        <div class="grid"> </div>
+    </body>
+</html>
