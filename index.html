@@ -18,6 +18,16 @@
                 $( "#generate" ).click(function() {
                     elem_cell_automata($("#rule").val());
                 });
+                $( "#rule" ).bind("enterKey", function(e) {
+                    elem_cell_automata($("#rule").val());
+                });
+
+                $('#rule').keyup(function(e){
+                    if(e.keyCode == 13)
+                    {
+                        $(this).trigger("enterKey");
+                    }
+                });
 
                 init_grid(grid_size);
             });
@@ -35,8 +45,10 @@
         <h2>Cellular Automaton</h2>
 
         <section id="downloads">
+<!--             
           <a href="https://github.com/sagarjauhari/cell_automaton/zipball/master" class="btn">Download as .zip</a>
           <a href="https://github.com/sagarjauhari/cell_automaton/tarball/master" class="btn">Download as .tar.gz</a>
+-->
           <a href="https://github.com/sagarjauhari/cell_automaton" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
@@ -51,9 +63,9 @@
           (See <a href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">Elementary Cellular Automaton</a>)
 
         <p>
-            <label>Select a rule:</label>
+            <label>Select a rule (0-255):</label>
             <input type="text" id="rule">
-            <button id="generate">Generate</button>
+            <button id="generate" class="btn">Generate</button>
         </p>
 
         <div class="grid"> </div>
