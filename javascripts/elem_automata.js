@@ -1,10 +1,15 @@
 function elem_cell_automata(rule){
-   reset_grid(); 
+  reset_grid(); 
   var init_row = [1];
-  for(var row = 0; row < 50; row++){
-    color_grid(init_row, row, 100);
-    init_row = evolve(rule, init_row);
-  }
+  
+  (function loopEvolve(row) {          
+    var max_row = 50;
+     setTimeout(function () {   
+        color_grid(init_row, row, 100);
+        init_row = evolve(rule, init_row);
+        if (++row < max_row) loopEvolve(row);
+   }, 20)
+  })(0);    
 }
 
 function out(text){
